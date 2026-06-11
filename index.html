@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rasul Sherov — Topik Mentor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Particle canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Cursor glow -->
+  <div id="cursor-glow"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">RS</div>
+      <ul class="nav-links">
+        <li><a href="#about">Haqimda</a></li>
+        <li><a href="#services">Xizmatlar</a></li>
+        <li><a href="#projects">Loyihalar</a></li>
+        <li><a href="#contact">Aloqa</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Temani o'zgartirish">
+        <span class="toggle-label">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </span>
+        <span class="toggle-text-dark">Light</span>
+        <span class="toggle-text-light">Dark</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menyuni ochish">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-text fade-in">
+        <p class="hero-greeting">Salom, men</p>
+        <h1 class="hero-name">Rasul Sherov</h1>
+        <h2 class="hero-title">Topik Mentor</h2>
+        <div class="hero-divider"></div>
+        <p class="hero-desc">
+          Zamonaviy texnologiyalarni o'rgataman, kurslar yarataman va
+          veb-saytlar ishlab chiqaman. Sizning muvaffaqiyatingiz — mening maqsadim.
+        </p>
+        <div class="hero-btns">
+          <a href="#about" class="btn btn-primary">Ko'proq bilish</a>
+          <a href="#contact" class="btn btn-outline">Bog'lanish</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://t.me/by_Rasul_sem" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.26 14.47l-2.95-.924c-.643-.203-.657-.643.136-.953l11.53-4.448c.537-.194 1.006.131.586.103z"/></svg>
+          </a>
+          <a href="https://instagram.com/by_Rasul_sem" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://youtube.com/@by_Rasul_sem" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo fade-in delay-1">
+        <div class="photo-wrapper">
+          <img src="assets/me.jpg" alt="Rasul Sherov" onerror="this.parentElement.classList.add('no-photo')" />
+          <div class="photo-placeholder">RS</div>
+          <div class="photo-corner-bl"></div>
+        </div>
+        <div class="photo-badge">
+          <span>🎓</span> Topik Mentor
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-label fade-up">Haqimda</div>
+      <h2 class="section-title fade-up">Kim men?</h2>
+      <div class="about-content">
+        <div class="about-text fade-up">
+          <p>
+            Men <strong>Rasul Sherov</strong> — topik mentor.
+            Yosh avlodga zamonaviy texnologiyalarni o'rgatish, ularning karyerasini shakllantirishda
+            ko'mak berish mening asosiy ishim.
+          </p>
+          <p>
+            Kurslar yaratish, individual mentoring va veb-loyihalar orqali har bir o'quvchiga
+            amaliy ko'nikmalar beraman.
+          </p>
+        </div>
+        <div class="about-stats fade-up delay-1">
+          <div class="stat-card">
+            <span class="stat-num">3+</span>
+            <span class="stat-label">Yil tajriba</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">200+</span>
+            <span class="stat-label">O'quvchilar</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">Loyihalar</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">5+</span>
+            <span class="stat-label">Kurslar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-label fade-up">Xizmatlar</div>
+      <h2 class="section-title fade-up">Nima qilaman?</h2>
+      <div class="services-grid">
+
+        <div class="service-card fade-up">
+          <div class="service-num">01</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.069A1 1 0 0121 8.82V18a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2h11"/><circle cx="9" cy="9" r="2"/><path d="M3 18l6-6 2 2 4-4"/></svg>
+          </div>
+          <h3>Kurs Yaratish</h3>
+          <p>
+            Sifatli video kurslar va o'quv materiallar tayyorlayman. Murakkab mavzularni
+            oddiy va tushunarli tarzda yetkazish mening kuchli tomonim.
+          </p>
+          <ul class="service-list">
+            <li>Video darslar seriyasi</li>
+            <li>Amaliy topshiriqlar va loyihalar</li>
+            <li>O'quvchilar bilan jonli sessiyalar</li>
+          </ul>
+        </div>
+
+        <div class="service-card fade-up delay-1">
+          <div class="service-num">02</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>Veb-sayt Tayyorlash</h3>
+          <p>
+            Biznes yoki shaxsiy maqsad uchun zamonaviy, tezkor va chiroyli veb-saytlar
+            ishlab chiqaman. Mobil va desktop uchun to'liq moslashtirilgan.
+          </p>
+          <ul class="service-list">
+            <li>Landing page va portfolio</li>
+            <li>Biznes veb-saytlari</li>
+            <li>Responsive dizayn</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-label fade-up">Loyihalar</div>
+      <h2 class="section-title fade-up">Ishlarim</h2>
+      <div class="projects-grid">
+
+        <div class="project-card fade-up">
+          <div class="project-img">
+            <img src="assets/projects/project1.jpg" alt="Loyiha 1" onerror="this.style.display='none'" />
+            <div class="project-overlay">
+              <span class="project-tag">Kurs</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Dasturlash Kursi</h3>
+            <p>HTML, CSS va JavaScript asoslaridan professional darajagacha to'liq kurs.</p>
+          </div>
+        </div>
+
+        <div class="project-card fade-up delay-1">
+          <div class="project-img">
+            <img src="assets/projects/project2.jpg" alt="Loyiha 2" onerror="this.style.display='none'" />
+            <div class="project-overlay">
+              <span class="project-tag">Veb-sayt</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Korporativ Sayt</h3>
+            <p>Kompaniya uchun zamonaviy va tezkor veb-sayt, admin panel bilan.</p>
+          </div>
+        </div>
+
+        <div class="project-card fade-up delay-2">
+          <div class="project-img">
+            <img src="assets/projects/project3.jpg" alt="Loyiha 3" onerror="this.style.display='none'" />
+            <div class="project-overlay">
+              <span class="project-tag">Mentoring</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Mentoring Dasturi</h3>
+            <p>3 oylik individual mentoring: karyera yo'nalishi va amaliy loyihalar.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-label fade-up">Aloqa</div>
+      <h2 class="section-title fade-up">Bog'laning!</h2>
+      <p class="contact-desc fade-up">Savol, taklif yoki hamkorlik uchun quyidagi kanallar orqali bog'laning.</p>
+
+      <div class="contact-cards fade-up">
+
+        <a href="mailto:sherov.rasul@gmail.com" class="contact-card">
+          <div class="contact-icon email-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">Email</span>
+            <span class="contact-value">sherov.rasul@gmail.com</span>
+          </div>
+        </a>
+
+        <a href="https://t.me/by_Rasul_sem" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon tg-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.26 14.47l-2.95-.924c-.643-.203-.657-.643.136-.953l11.53-4.448c.537-.194 1.006.131.586.103z"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">Telegram</span>
+            <span class="contact-value">@by_Rasul_sem</span>
+          </div>
+        </a>
+
+        <a href="https://instagram.com/by_Rasul_sem" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon ig-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">Instagram</span>
+            <span class="contact-value">@by_Rasul_sem</span>
+          </div>
+        </a>
+
+        <a href="https://youtube.com/@by_Rasul_sem" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon yt-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">YouTube</span>
+            <span class="contact-value">@by_Rasul_sem</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">RS</div>
+        <p class="footer-copy">© 2026 Rasul Sherov. Barcha huquqlar himoyalangan.</p>
+        <div class="footer-socials">
+          <a href="https://t.me/by_Rasul_sem" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.26 14.47l-2.95-.924c-.643-.203-.657-.643.136-.953l11.53-4.448c.537-.194 1.006.131.586.103z"/></svg>
+          </a>
+          <a href="https://instagram.com/by_Rasul_sem" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://youtube.com/@by_Rasul_sem" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
